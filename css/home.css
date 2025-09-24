@@ -374,8 +374,6 @@ li:nth-child(3) a:active {
   object-fit: cover;
 }
 
-.containercard {
-}
 .containercard > .envelope-wrapper {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
