@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #fff;
+        --bg-color: rgb(46, 46, 46);
+        --bg-envelope-color: #ecede8;
+        --envelope-tab: #ecede8;
+        --envelope-cover: #ecede8;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --txt-color: #444;
+        --heart-color: rgb(252, 8, 231);
+      }
+      body {
+        margin: 7em;
+        padding: 0;
+        box-sizing: border-box;
+        background: var(--bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .container > .envelope-wrapper {
+        background: var(--bg-envelope-color);
+        box-shadow: 0 0 40px var(--shadow-color);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .envelope-wrapper > .envelope {
+        position: relative;
+        width: 700px;
+        height: 400px;
+      }
+      .envelope-wrapper > .envelope::before {
+        content: "";
+        position: absolute;
+        top: 2.5%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        border-top: 250px solid var(--envelope-tab);
+        border-right: 350px solid transparent;
+        border-left: 350px solid transparent;
+        transform-origin: top;
+        transition: all 0.5s ease-in-out 0.7s;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .envelope-wrapper > .envelope::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        border-top: 250px solid transparent;
+        border-right: 350px solid var(--envelope-cover);
+        border-bottom: 200px solid var(--envelope-cover);
+        border-left: 350px solid var(--envelope-cover);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        /* 👇 shadow effect only on sides */
+        filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.1))
+          drop-shadow(2px 0 2px rgba(0, 0, 0, 0.1));
+      }
+      .envelope > .letter {
+        position: absolute;
+        right: 21%;
+        bottom: 0;
+        width: 55%;
+        height: 80%;
+        background: var(--primary);
+        text-align: center;
+        transition: all 1s ease-in-out;
+        box-shadow: 0 0 5px var(--shadow-color);
+        padding: 20px 10px;
+      }
+
+      .envelope > .letter > .text {
+        font-family: Tangerine, sans-serif;
+        color: var(--txt-color);
+        text-align: left;
+        font-size: 10px;
+      }
+
+      .envelope > .letter > .text > p:nth-child(1) {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 10px 0px;
+        margin: 0;
+        color: #64876a;
+      }
+
+      .envelope > .letter > .text > p:nth-child(2) {
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 0.6rem;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+        color: #64876a;
+      }
+
+      .waxseal {
+        position: absolute;
+        top: 67.5%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        z-index: 4;
+        transform: translate(-50%, -20%) rotate(45deg);
+        transition: transform 0.5s ease-in-out 1s;
+        cursor: pointer;
+      }
+
+      .waxseal img {
+        width: 100%;
+      }
+      .heart {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--heart-color);
+        z-index: 4;
+        transform: translate(-50%, -20%) rotate(45deg);
+        transition: transform 0.5s ease-in-out 1s;
+        box-shadow: 0 1px 6px var(--shadow-color);
+        cursor: pointer;
+      }
+      .heart:before,
+      .heart:after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: var(--heart-color);
+        border-radius: 50%;
+      }
+      .heart:before {
+        top: -7.5px;
+      }
+      .heart:after {
+        right: 7.5px;
+      }
+      .flap > .envelope:before {
+        transform: rotateX(180deg);
+        z-index: 0;
+      }
+      .flap > .envelope > .letter {
+        bottom: 100px;
+        transform: scale(1.5);
+        transition-delay: 1s;
+      }
+      .flap > .heart {
+        transform: rotate(90deg);
+        transition-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <p>You're Invited!!!</p>
+              <p>
+                With joy in our hearts, we invite you to celebrate the beginning
+                of our forever. Join us as we say “I do” on November 8
+                surrounded by love, family, and friends. Your presence will make
+                our day even more special.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="heart"></div>
+        <div class="waxseal">
+          <img src="assets/waxseal.webp" />
+        </div>
+      </div>
+    </div>
+    <script>
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+      });
+    </script>
+  </body>
+</html>

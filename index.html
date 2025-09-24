@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osmundo & MaryGrace</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ecede8;
+        font-family: Arial, sans-serif;
+        color: #64876a;
+        cursor: pointer;
+        text-align: center;
+        transition: opacity 1s ease; /* smooth transition */
+        opacity: 1;
+      }
+
+      body.fade-out {
+        opacity: 0;
+      }
+
+      #title {
+        font-size: 5.5rem;
+        font-family: Tangerine, sans-serif;
+      }
+
+      #touch {
+        font-size: 1.5rem;
+        font-family: Poppins, sans-serif;
+        font-weight: 300;
+      }
+
+      @media (max-width: 415px) {
+        #title {
+          font-size: 3rem;
+        }
+        #touch {
+          font-size: 1rem;
+        }
+      }
+
+      h1,
+      h4 {
+        opacity: 0;
+        transition: opacity 2s ease;
+        margin: 10px 0;
+      }
+
+      .show {
+        opacity: 1;
+      }
+
+      h4.blink {
+        animation: blink 1.5s infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Osmundo & Mary Grace</h1>
+    <h4 onclick="goToMain()" id="touch">Tap to continue</h4>
+
+    <script>
+      const title = document.getElementById("title");
+      const touch = document.getElementById("touch");
+
+      // Show h1 first
+      setTimeout(() => {
+        title.classList.add("show");
+      }, 500);
+
+      // Show h4 after h1 finishes fading in
+      setTimeout(() => {
+        touch.classList.add("show", "blink");
+      }, 2500);
+
+      function goToMain() {
+        if (touch.classList.contains("show")) {
+          document.body.classList.add("fade-out");
+          setTimeout(() => {
+            window.location.href = "home.html";
+          }, 1000); // matches the transition duration (1s)
+        }
+      }
+    </script>
+  </body>
+</html>

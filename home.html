@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMG Wedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="home.html" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="faqs.html" class="nav-link">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a href="weddingpict.html" class="nav-link">Wedding Pictures</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="slide1">
+        <img src="assets/grace.jpg" />
+
+        <div class="container-child">
+          <div class="content">
+            <h1>
+              <span> Osmundo </span>
+              <span> and </span>
+              <span> Mary Grace </span>
+            </h1>
+            <p>are getting married</p>
+          </div>
+
+          <div class="countdown">
+            <h2>Save the Date!</h2>
+            <h3>NOVEMBER 8, 2025</h3>
+            <div id="timer">
+              <div class="block">
+                <span class="time" id="days">00</span>
+                <span class="label">Days</span>
+              </div>
+              <div class="block">
+                <span class="time" id="hours">00</span>
+                <span class="label">Hours</span>
+              </div>
+              <div class="block">
+                <span class="time" id="minutes">00</span>
+                <span class="label">Minutes</span>
+              </div>
+              <div class="block">
+                <span class="time" id="seconds">00</span>
+                <span class="label">Seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container2">
+      <p onclick="playMusic()">Click for a better Experience</p>
+      <audio id="bg-music" src="assets/ikawlangpatutunguhan.mp3"></audio>
+    </div>
+    <section class="invitation-section">
+      <div class="flowers">
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+        <img class="gifgif" src="assets/giphy.gif" />
+      </div>
+
+      <div class="background-video">
+        <video autoplay muted loop>
+          <source src="assets/graceosmundo.mp4" type="video/mp4" />
+        </video>
+        <img
+          src="https://media.tenor.com/pB1a59Mhtt0AAAAi/heart-hearts.gif"
+          class="gif-bg"
+        />
+      </div>
+
+      <div class="containercard">
+        <div class="envelope-wrapper">
+          <div class="envelope">
+            <div class="letter">
+              <div class="text">
+                <p>You're Invited!!!</p>
+                <p>
+                  With joy in our hearts, we invite you to celebrate the
+                  beginning of our forever. Join us as we say “I do” on November
+                  8 surrounded by love, family, and friends. Your presence will
+                  make our day even more special.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="clickme">
+            <img src="assets/click.gif" />
+          </div>
+          <div class="waxseal">
+            <img src="assets/waxseal.webp" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slider namin -->
+    <div class="slideshow">
+      <p>
+        Two souls, once strangers, are now bound as one. May this love grow
+        deeper with every sunrise, and may every sunset remind you that forever
+        is not a promise but a choice you keep making together.
+      </p>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="assets/pic4.jpg" />
+          </div>
+          <div class="slide">
+            <img class="pict1" src="assets/pic5.jpg" alt="" />
+          </div>
+
+          <div class="slide"><img src="assets/pic2.jpg" /></div>
+          <div class="slide"><img src="assets/pic3.jpg" alt="" /></div>
+          <div class="slide"><img src="assets/pic4.jpg" alt="" /></div>
+          <div class="slide"><img src="assets/pic6.jpg" alt="" /></div>
+          <div class="slide"><img src="assets/pic7.jpg" alt="" /></div>
+          <div class="slide"><img src="assets/pict8.jpg" alt="" /></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/home.js"></script>
+  </body>
+</html>
