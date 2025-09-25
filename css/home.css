@@ -8,7 +8,8 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   background-color: #e4e6d9;
   opacity: 0; /* Start invisible */
   transition: opacity 1s ease; /* Smooth transition */
@@ -25,6 +26,7 @@ header {
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1); /* soft blurred shadow */
   position: sticky;
   top: 0;
+
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -237,6 +239,9 @@ li:nth-child(3) a:active {
 .countdown {
   text-align: center;
   padding: 20px 40px;
+  position: absolute;
+  left: 37%;
+  bottom: 0;
 }
 
 .countdown h2 {
@@ -328,31 +333,7 @@ li:nth-child(3) a:active {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
   position: relative;
-}
-
-.flowers {
-  display: flex;
-  right: 0;
-  padding: 0;
-  position: absolute;
-  height: 100px;
-  z-index: 1000;
-  bottom: 5%;
-  justify-content: center;
-  left: 0;
-  overflow: hidden;
-}
-
-.gifgif {
-  width: 300px;
-  height: 100px;
-  z-index: 1000;
-  bottom: 40%;
-  left: 0;
-  margin-left: -30px;
 }
 
 .background-video {
@@ -373,6 +354,7 @@ li:nth-child(3) a:active {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .containercard > .envelope-wrapper {
@@ -504,12 +486,11 @@ li:nth-child(3) a:active {
 
 /** slider namin **/
 .slideshow {
-  margin: 0;
+  margin: 0 0 2em;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
-  height: 100vh;
   background: #e4e6d9;
 }
 
@@ -587,7 +568,67 @@ li:nth-child(3) a:active {
   }
 
   100% {
-    transform: translateX(-1250px);
+    transform: translateX(-1300px);
   }
 }
 
+.maps {
+  width: 100%;
+  height: auto;
+  padding: 0 2em;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 0px;
+  width: 100%;
+  background-color: #4f6252;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+  padding: 0;
+  font-family: Poppins;
+  color: #ecede8;
+  font-weight: 400;
+}
+
+h1 span {
+  font-family: Tangerine, sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #ecede8;
+}
+
+.main-container > p {
+  font-family: Poppins;
+  font-weight: 400;
+  color: #ecede8;
+}
+
+.box-container {
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  gap: 3em;
+  background-color: #4f6252;
+}
+
+.box-container img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 400px;
+  border-radius: 20px;
+}
+
+.main-container > iframe {
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  width: 50%;
+}
